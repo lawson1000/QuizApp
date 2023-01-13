@@ -1,3 +1,5 @@
+from random import randint
+
 categories = ['Entertainment', 'Polities', 'Sport', 'Beauty', 'Lifestyle']
 print("Please Enter Your Name:")
 user_name = input(">>")
@@ -12,5 +14,113 @@ print(f"Please select three options from above to play from using their numbers"
 user_pick1 = int(input(">>"))
 user_pick2 = int(input(">>"))
 user_pick3 = int(input(">>"))
+Q_numbers = 1
 
-if user_pick3
+score = 0
+
+
+def entertainment():
+    print(f"There are 3 Questions in this Entertainment Session")
+    print(f"Question\n"
+          f"=============================\n"
+          f"Davido is a Musician?\n"
+          f"[A] True \n[B] False"
+          f"=============================\n")
+    q1 = input(">>").upper()
+    if q1 == "A":
+        print("Correct")
+        # score += 10
+    else:
+        print("Wrong")
+
+def polities():
+    print(f"There are 3 Questions in this Entertainment Session")
+    print(f"Question\n"
+          f"=============================\n"
+          f"Davido is a Musician?\n"
+          f"[A] True \n[B] False"
+          f"=============================\n")
+    q1 = input(">>").upper()
+    if q1 == "A":
+        print("Correct")
+        # score += 10
+    else:
+        print("Wrong")
+
+def sport():
+    print(f"There are 3 Questions in this Entertainment Session")
+    print(f"Question\n"
+          f"=============================\n"
+          f"Davido is a Musician?\n"
+          f"[A] True \n[B] False"
+          f"=============================\n")
+    q1 = input(">>").upper()
+    if q1 == "A":
+        print("Correct")
+        # score += 10
+    else:
+        print("Wrong")
+
+
+def beauty():
+    print(f"There are 3 Questions in this Entertainment Session")
+    print(f"Question\n"
+          f"=============================\n"
+          f"Davido is a Musician?\n"
+          f"[A] True \n[B] False"
+          f"=============================\n")
+    q1 = input(">>").upper()
+    if q1 == "A":
+        print("Correct")
+        # score += 10
+    else:
+        print("Wrong")
+
+def lifestyle():
+    print(f"There are 3 Questions in this Entertainment Session")
+    print(f"Question\n"
+          f"=============================\n"
+          f"Davido is a Musician?\n"
+          f"[A] True \n[B] False"
+          f"=============================\n")
+    q1 = input(">>").upper()
+    if q1 == "A":
+        print("Correct")
+        # score += 10
+    else:
+        print("Wrong")
+
+
+if user_pick1 == 1:
+      entertainment()
+elif user_pick1 == 2:
+      polities()
+elif user_pick1 == 3:
+      sport()
+elif user_pick1 == 4:
+      beauty()
+elif user_pick1 == 5:
+      lifestyle()
+
+
+if user_pick2 == 1:
+      entertainment()
+elif user_pick2 == 2:
+      polities()
+elif user_pick2 == 3:
+      sport()
+elif user_pick2 == 4:
+      beauty()
+elif user_pick2 == 5:
+      lifestyle()
+
+if user_pick3 == 1:
+      entertainment()
+elif user_pick3 == 2:
+      polities()
+elif user_pick3 == 3:
+      sport()
+elif user_pick3 == 4:
+      beauty()
+elif user_pick3 == 5:
+      lifestyle()
