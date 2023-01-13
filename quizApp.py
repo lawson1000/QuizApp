@@ -39,7 +39,7 @@ def entertainment():
           else:
                 print(f"========================\n"
                       f"WRONG\n"
-                      f"Your Currect Score is {score}\n"
+                      f"Your Current Score is {score}\n"
                       f"========================\n")
 
       def question2():
@@ -60,19 +60,68 @@ def entertainment():
           else:
                 print(f"========================\n"
                       f"WRONG\n"
-                      f"Your Currect Score is {score}\n"
+                      f"Your Current Score is {score}\n"
                       f"========================\n")
-      for i in range(2):
-            random_number = randint(1, 3)
+
+      def question3():
+            print(f"Question3\n"
+                  f"=============================\n"
+                  f"Reekado Banks won the next rated Award in what year?\n"
+                  f"[A] 2021 \n[B] 2019\n[C] 2013 \n[D] 2015\n"
+                  f"=============================")
+            q3 = input(">>").upper()
+            global score
+            if q3 == "D":
+                score += 10
+                print(f"========================\n"
+                      f"CORRECT\n"
+                      f"Your Current Score is {score}\n"
+                      f"========================\n")
+            else:
+                print(f"========================\n"
+                      f"WRONG\n"
+                      f"Your Current Score is {score}\n"
+                      f"========================\n")
+
+      def question4():
+          print(f"Question4\n"
+                f"=============================\n"
+                f"Who is the CEO/Owner of YBNL record Label? \n"
+                f"[A] Ycee \n[B] Olamide\n[C] Davido \n[D] Dj Xclusive\n"
+                f"=============================")
+          q4 = input(">>").upper()
+
+          global score
+          if q4 == "B":
+                score += 10
+                print(f"========================\n"
+                      f"CORRECT\n"
+                      f"Your Current Score is {score}\n"
+                      f"========================\n")
+          else:
+                print(f"========================\n"
+                      f"WRONG\n"
+                      f"Your Current Score is {score}\n"
+                      f"========================\n")
+      rand_list= []
+      for i in range(3):
+            while True:
+                random_number = randint(1, 4)
+                print(random_number)
+                if random_number not in rand_list:
+                    rand_list.append(random_number)
+                    break
+                else:
+                    continue
             if random_number == 1:
                   question1()
             elif random_number == 2:
                   question2()
-            # elif random_number == 3:
-            #       question3()
-            # elif random_number == 3:
-            #       question4()
-            # elif random_number == 3:
+            elif random_number == 3:
+                  question3()
+            elif random_number == 4:
+                  question4()
+            # elif random_number == 5:
             #       question5()
             # else:
             #       question6()
