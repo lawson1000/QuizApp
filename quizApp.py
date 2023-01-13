@@ -20,19 +20,64 @@ score = 0
 
 
 def entertainment():
-    print(f"There are 3 Questions in this Entertainment Session")
-    print(f"Question\n"
-          f"=============================\n"
-          f"Davido is a Musician?\n"
-          f"[A] True \n[B] False"
-          f"=============================\n")
-    q1 = input(">>").upper()
-    if q1 == "A":
-        print("Correct")
-        # score += 10
-    else:
-        print("Wrong")
+      print(f"There are 3 Questions in this Entertainment Session")
+      def question1():
+          print(f"Question1\n"
+                f"=============================\n"
+                f"Davido is a Musician?\n"
+                f"[A] True \n[B] False\n"
+                f"=============================")
+          q1 = input(">>").upper()
 
+          global score
+          if q1 == "A":
+                score += 10
+                print(f"========================\n"
+                      f"CORRECT\n"
+                      f"Your Current Score is {score}\n"
+                      f"========================\n")
+          else:
+                print(f"========================\n"
+                      f"WRONG\n"
+                      f"Your Currect Score is {score}\n"
+                      f"========================\n")
+
+      def question2():
+          print(f"Question2\n"
+                f"=============================\n"
+                f"Who made this viral statement 'E Choke!' ?\n"
+                f"[A] Portable \n[B] Davido\n"
+                f"=============================")
+          q2 = input(">>").upper()
+
+          global score
+          if q2 == "B":
+                score += 10
+                print(f"========================\n"
+                      f"CORRECT\n"
+                      f"Your Current Score is {score}\n"
+                      f"========================\n")
+          else:
+                print(f"========================\n"
+                      f"WRONG\n"
+                      f"Your Currect Score is {score}\n"
+                      f"========================\n")
+      for i in range(2):
+            random_number = randint(1, 3)
+            if random_number == 1:
+                  question1()
+            elif random_number == 2:
+                  question2()
+            # elif random_number == 3:
+            #       question3()
+            # elif random_number == 3:
+            #       question4()
+            # elif random_number == 3:
+            #       question5()
+            # else:
+            #       question6()
+
+# categoriesq = [entertainment(), 'Polities', 'Sport', 'Beauty', 'Lifestyle']
 def polities():
     print(f"There are 3 Questions in this Entertainment Session")
     print(f"Question\n"
