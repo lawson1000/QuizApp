@@ -1,6 +1,5 @@
 from random import randint
 
-# categories = ['Entertainment', 'Polities', 'Sport', 'Beauty', 'Lifestyle']
 print("Please Enter Your Name:")
 # error handling for username
 while True:
@@ -10,7 +9,11 @@ while True:
         user_name = input(">>").title().strip()
 
     while user_name.isalpha() is True and len(user_name) >=3 and len(user_name) <= 15:
-        print(f"Hello {user_name}, Welcome to the Ultimate Quiz App"
+        # Question Sections
+        print(f"Hello {user_name}, Welcome to the Ultimate Quiz App\n"
+              f"Here's the rule of the game\n"
+              f"one wrong answer is -5\n"
+              f"one correct answer is 10\n"
               f"\n[1] Entertainment"
               f"\n[2] Polities"
               f"\n[3] Sport"
@@ -19,8 +22,7 @@ while True:
         break
     break
 
-print(f"Please select three options from above to play from using their numbers")
-
+print(f"Please select one section from above to play from using their numbers")
 # Error handling for picking questions
 while True:
     try:
@@ -32,11 +34,40 @@ while True:
             break
     except ValueError:
         print("Enter any number from the option above")
-# user_pick2 = int(input(">>"))
-# user_pick3 = int(input(">>"))
 
 Q_numbers = 1
 score = 0
+
+def two_options():
+    while True:
+        try:
+            global q1
+            q1 = int(input(">>"))
+            if q1 < 1 or q1 > 2:
+                print("Please Enter from the options above (1 or 2)")
+                continue
+            else:
+                break
+        except ValueError:
+            print("Please a numeric value")
+    return q1
+
+
+def four_options():
+    while True:
+        try:
+            global quest1
+            quest1 = int(input(">>"))
+            if quest1 < 1 or quest1 > 4:
+                print("Please Enter from the options above (1 or 4)")
+                continue
+            else:
+                break
+        except ValueError:
+            print("Please a numeric value")
+    return quest1
+
+
 
 
 def entertainment():
@@ -46,34 +77,40 @@ def entertainment():
           print(f"Question {Q_numbers}\n"
                 f"=============================\n"
                 f"Davido is a Musician?\n"
-                f"[A] True \n[B] False\n"
+                f"[1] True \n[2] False\n"
                 f"=============================")
-          q1 = input(">>").upper()
+
+          q1 = two_options()
 
           global score
-          if q1 == "A":
-                score += 10
-                print(f"========================\n"
-                      f"CORRECT\n"
-                      f"Your Current Score is {score}\n"
-                      f"========================\n")
+          if q1 == 1:
+              score += 10
+              print(f"========================\n"
+                    f"CORRECT\n"
+                    f"Your Current Score is {score}\n"
+                    f"========================\n")
           else:
-                print(f"========================\n"
-                      f"WRONG\n"
-                      f"Your Current Score is {score}\n"
-                      f"========================\n")
-          Q_numbers+=1
+              print(f"========================\n"
+                    f"WRONG\n"
+                    f"The Answer is [1] True\n"
+                    f"Your Current Score is {score-5}\n"
+                    f"========================\n")
+          Q_numbers += 1
+
+
+
       def question2():
           global Q_numbers
           print(f"Question {Q_numbers}\n"
                 f"=============================\n"
                 f"Who made this viral statement 'E Choke!' ?\n"
-                f"[A] Portable \n[B] Davido\n"
+                f"[1] Portable \n[2] Davido\n"
                 f"=============================")
-          q2 = input(">>").upper()
+
+          q2 = two_options()
 
           global score
-          if q2 == "B":
+          if q2 == 2:
                 score += 10
                 print(f"========================\n"
                       f"CORRECT\n"
@@ -82,7 +119,8 @@ def entertainment():
           else:
                 print(f"========================\n"
                       f"WRONG\n"
-                      f"Your Current Score is {score}\n"
+                      f"The Answer is [2] Davido\n"
+                      f"Your Current Score is {score-5}\n"
                       f"========================\n")
           Q_numbers +=1
 
@@ -91,11 +129,12 @@ def entertainment():
             print(f"Question {Q_numbers}\n"
                   f"=============================\n"
                   f"Reekado Banks won the next rated Award in what year?\n"
-                  f"[A] 2021 \n[B] 2019\n[C] 2013 \n[D] 2015\n"
+                  f"[1] 2021 \n[2] 2019\n[3] 2013 \n[4] 2015\n"
                   f"=============================")
-            q3 = input(">>").upper()
+            q3 = four_options()
+
             global score
-            if q3 == "D":
+            if q3 == 4:
                 score += 10
                 print(f"========================\n"
                       f"CORRECT\n"
@@ -104,20 +143,21 @@ def entertainment():
             else:
                 print(f"========================\n"
                       f"WRONG\n"
-                      f"Your Current Score is {score}\n"
+                      f"The Answer is [4] 2015\n"
+                      f"Your Current Score is {score-5}\n"
                       f"========================\n")
-            Q_numbers +=1
+            Q_numbers += 1
       def question4():
           global Q_numbers
           print(f"Question {Q_numbers}\n"
                 f"=============================\n"
                 f"Who is the CEO/Owner of YBNL record Label? \n"
-                f"[A] Ycee \n[B] Olamide\n[C] Davido \n[D] Dj Xclusive\n"
+                f"[1] Ycee \n[2] Olamide\n[3] Davido \n[4] Dj Xclusive\n"
                 f"=============================")
-          q4 = input(">>").upper()
+          q4 = four_options()
 
           global score
-          if q4 == "B":
+          if q4 == "2":
                 score += 10
                 print(f"========================\n"
                       f"CORRECT\n"
@@ -126,7 +166,8 @@ def entertainment():
           else:
                 print(f"========================\n"
                       f"WRONG\n"
-                      f"Your Current Score is {score}\n"
+                      f"The Answer is [2] Olamide\n"
+                      f"Your Current Score is {score-5}\n"
                       f"========================\n")
           Q_numbers += 1
       rand_list= []
@@ -148,24 +189,129 @@ def entertainment():
             elif random_number == 4:
                   question4()
             # elif random_number == 5:
-            #       question5()
+            #     question5()
             # else:
-            #       question6()
+            #     question6()
 
-# categoriesq = [entertainment(), 'Polities', 'Sport', 'Beauty', 'Lifestyle']
 def polities():
-    print(f"There are 3 Questions in this Entertainment Session")
-    print(f"Question\n"
-          f"=============================\n"
-          f"Davido is a Musician?\n"
-          f"[A] True \n[B] False"
-          f"=============================\n")
-    q1 = input(">>").upper()
-    if q1 == "A":
-        print("Correct")
-        # score += 10
-    else:
-        print("Wrong")
+    print(f"There are 3 Questions in this Polities Section")
+    def question1():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"Goodluck Ebele Jonathan Govern Lagos State?\n"
+              f"[1] True \n[2] False\n"
+              f"=============================")
+        pol_q1 = two_options()
+
+        global score
+        if pol_q1 == 2:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [2] True\n"
+                  f"Your Current Score is {score-5}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+    def question2():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"Nigeria gained her independence what year?' ?\n"
+              f"[1] 1963 \n[2] 1960\n[3] 1950 \n[4] 1900\n"
+              f"=============================")
+        pol_q2=four_options()
+
+        global score
+        if pol_q2 == 2:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [2] 1960\n"
+                  f"Your Current Score is {score-5}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+    def question3():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"What is the full meaning of LP?\n"
+              f"[1] LAPO \n[2] Lagos Police\n[3] Labour Party \n[4] Lagos Party\n"
+              f"=============================")
+        pol_q3 =four_options()
+        global score
+        if pol_q3 == 3:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [3] Labour Party\n"
+                  f"Your Current Score is {score-5}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+    def question4():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"Who is the CEO/Owner of YBNL record Label? \n"
+              f"[A] Ycee \n[B] Olamide\n[C] Davido \n[D] Dj Xclusive\n"
+              f"=============================")
+        q4 = input(">>").upper()
+
+        global score
+        if q4 == "B":
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+    rand_list = []
+    for i in range(3):
+        while True:
+            random_number = randint(1, 4)
+            print(random_number)
+            if random_number not in rand_list:
+                rand_list.append(random_number)
+                break
+            else:
+                continue
+        if random_number == 1:
+            question1()
+        elif random_number == 2:
+            question2()
+        elif random_number == 3:
+            question3()
+        elif random_number == 4:
+            question4()
+        # elif random_number == 5:
+        #       question5()
+        # else:
+        #       question6()
+
 
 def sport():
     print(f"There are 3 Questions in this Entertainment Session")
