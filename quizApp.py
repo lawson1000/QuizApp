@@ -71,7 +71,7 @@ def four_options():
 
 
 def entertainment():
-      print(f"There are 3 Questions in this Entertainment Session")
+      print(f"There are 3 Questions in this Entertainment Section")
       def question1():
           global Q_numbers
           print(f"Question {Q_numbers}\n"
@@ -90,10 +90,11 @@ def entertainment():
                     f"Your Current Score is {score}\n"
                     f"========================\n")
           else:
+              score -= 5
               print(f"========================\n"
                     f"WRONG\n"
                     f"The Answer is [1] True\n"
-                    f"Your Current Score is {score-5}\n"
+                    f"Your Current Score is {score}\n"
                     f"========================\n")
           Q_numbers += 1
 
@@ -117,10 +118,11 @@ def entertainment():
                       f"Your Current Score is {score}\n"
                       f"========================\n")
           else:
+                score -= 5
                 print(f"========================\n"
                       f"WRONG\n"
                       f"The Answer is [2] Davido\n"
-                      f"Your Current Score is {score-5}\n"
+                      f"Your Current Score is {score}\n"
                       f"========================\n")
           Q_numbers +=1
 
@@ -141,10 +143,11 @@ def entertainment():
                       f"Your Current Score is {score}\n"
                       f"========================\n")
             else:
+                score -= 5
                 print(f"========================\n"
                       f"WRONG\n"
                       f"The Answer is [4] 2015\n"
-                      f"Your Current Score is {score-5}\n"
+                      f"Your Current Score is {score}\n"
                       f"========================\n")
             Q_numbers += 1
       def question4():
@@ -157,24 +160,24 @@ def entertainment():
           q4 = four_options()
 
           global score
-          if q4 == "2":
+          if q4 == 2:
                 score += 10
                 print(f"========================\n"
                       f"CORRECT\n"
                       f"Your Current Score is {score}\n"
                       f"========================\n")
           else:
+                score -= 5
                 print(f"========================\n"
                       f"WRONG\n"
                       f"The Answer is [2] Olamide\n"
-                      f"Your Current Score is {score-5}\n"
+                      f"Your Current Score is {score}\n"
                       f"========================\n")
           Q_numbers += 1
       rand_list= []
       for i in range(3):
             while True:
                 random_number = randint(1, 4)
-                print(random_number)
                 if random_number not in rand_list:
                     rand_list.append(random_number)
                     break
@@ -212,10 +215,11 @@ def polities():
                   f"Your Current Score is {score}\n"
                   f"========================\n")
         else:
+            score -= 5
             print(f"========================\n"
                   f"WRONG\n"
                   f"The Answer is [2] True\n"
-                  f"Your Current Score is {score-5}\n"
+                  f"Your Current Score is {score}\n"
                   f"========================\n")
         Q_numbers += 1
 
@@ -223,7 +227,7 @@ def polities():
         global Q_numbers
         print(f"Question {Q_numbers}\n"
               f"=============================\n"
-              f"Nigeria gained her independence what year?' ?\n"
+              f"Nigeria gained her independence what year?\n"
               f"[1] 1963 \n[2] 1960\n[3] 1950 \n[4] 1900\n"
               f"=============================")
         pol_q2=four_options()
@@ -236,10 +240,11 @@ def polities():
                   f"Your Current Score is {score}\n"
                   f"========================\n")
         else:
+            score -= 5
             print(f"========================\n"
                   f"WRONG\n"
                   f"The Answer is [2] 1960\n"
-                  f"Your Current Score is {score-5}\n"
+                  f"Your Current Score is {score}\n"
                   f"========================\n")
         Q_numbers += 1
 
@@ -259,10 +264,11 @@ def polities():
                   f"Your Current Score is {score}\n"
                   f"========================\n")
         else:
+            score -= 5
             print(f"========================\n"
                   f"WRONG\n"
                   f"The Answer is [3] Labour Party\n"
-                  f"Your Current Score is {score-5}\n"
+                  f"Your Current Score is {score}\n"
                   f"========================\n")
         Q_numbers += 1
 
@@ -270,21 +276,74 @@ def polities():
         global Q_numbers
         print(f"Question {Q_numbers}\n"
               f"=============================\n"
-              f"Who is the CEO/Owner of YBNL record Label? \n"
-              f"[A] Ycee \n[B] Olamide\n[C] Davido \n[D] Dj Xclusive\n"
+              f"Who formed the first political party in Nigeria? \n"
+              f"[1] Abacha \n[2] Obasanjo\n[3] Tinubu \n[4] Herbert Macaulay\n"
               f"=============================")
-        q4 = input(">>").upper()
+        pol_q4=four_options()
 
         global score
-        if q4 == "B":
+        if pol_q4 == 4:
             score += 10
             print(f"========================\n"
                   f"CORRECT\n"
                   f"Your Current Score is {score}\n"
                   f"========================\n")
         else:
+            score -= 5
             print(f"========================\n"
                   f"WRONG\n"
+                  f"The Answer is [4] Herbert Macaculay\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+
+    def question5():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"What was the name of the first political party in Nigeria? \n"
+              f"[1] NNPC \n[2] APC \n[3] PDP \n[4] NNDP \n"
+              f"=============================")
+        pol_q5 = four_options()
+
+        global score
+        if pol_q5 == 4:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            score -= 5
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [4] NNDP\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+    def question6():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"What do the two horses represent on the Nigerian coat of arm? \n"
+              f"[1] Peace \n[2] Strength\n[3] Dignity \n[4] So help me God\n"
+              f"=============================")
+        pol_q6 = four_options()
+
+        global score
+        if pol_q6 == 3:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            score -= 5
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [3] Dignity\n"
                   f"Your Current Score is {score}\n"
                   f"========================\n")
         Q_numbers += 1
@@ -292,8 +351,7 @@ def polities():
     rand_list = []
     for i in range(3):
         while True:
-            random_number = randint(1, 4)
-            print(random_number)
+            random_number = randint(1, 6)
             if random_number not in rand_list:
                 rand_list.append(random_number)
                 break
@@ -307,26 +365,185 @@ def polities():
             question3()
         elif random_number == 4:
             question4()
-        # elif random_number == 5:
-        #       question5()
-        # else:
-        #       question6()
+        elif random_number == 5:
+            question5()
+        else:
+            question6()
 
 
 def sport():
-    print(f"There are 3 Questions in this Entertainment Session")
-    print(f"Question\n"
-          f"=============================\n"
-          f"Davido is a Musician?\n"
-          f"[A] True \n[B] False"
-          f"=============================\n")
-    q1 = input(">>").upper()
-    if q1 == "A":
-        print("Correct")
-        # score += 10
-    else:
-        print("Wrong")
+    print(f"There are 3 Questions in this Sport Section")
+    def question1():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"What sport is best known as the ‘king of sports’?\n"
+              f"[1] Basketball \n[2] Golf\n[3] Soccer \n[4] Hockey\n"
+              f"=============================")
+        spo_q1 = four_options()
 
+        global score
+        if spo_q1 == 3:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            score -= 5
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [3] Soccer\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+    def question2():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"The Olympics are held every how many years?\n"
+              f"[1] 4 years \n[2] 2 years \n[3] 1 year \n[4] 3 years\n"
+              f"=============================")
+        spo_q2=four_options()
+
+        global score
+        if spo_q2 == 1:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            score -= 5
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [1] 4 years\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+    def question3():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"What’s the national sport of Canada?\n"
+              f"[1] America Soccer \n[2] Football\n[3] Lacrose \n[4] Base Ball\n"
+              f"=============================")
+        spo_q3 =four_options()
+        global score
+        if spo_q3 == 3:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            score -= 5
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [3] Lacrose\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+    def question4():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"Who formed the first political party in Nigeria? \n"
+              f"[1] Abacha \n[2] Obasanjo\n[3] Tinubu \n[4] Herbert Macaulay\n"
+              f"=============================")
+        pol_q4=four_options()
+
+        global score
+        if pol_q4 == 4:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            score -= 5
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [4] Herbert Macaculay\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+
+    def question5():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"What was the name of the first political party in Nigeria? \n"
+              f"[1] NNPC \n[2] APC \n[3] PDP \n[4] NNDP \n"
+              f"=============================")
+        pol_q5 = four_options()
+
+        global score
+        if pol_q5 == 4:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            score -= 5
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [4] NNDP\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+    def question6():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"What do the two horses represent on the Nigerian coat of arm? \n"
+              f"[1] Peace \n[2] Strength\n[3] Dignity \n[4] So help me God\n"
+              f"=============================")
+        pol_q6 = four_options()
+
+        global score
+        if pol_q6 == 3:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            score -= 5
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [3] Dignity\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+    rand_list = []
+    for i in range(3):
+        while True:
+            random_number = randint(1, 6)
+            if random_number not in rand_list:
+                rand_list.append(random_number)
+                break
+            else:
+                continue
+        if random_number == 1:
+            question1()
+        elif random_number == 2:
+            question2()
+        elif random_number == 3:
+            question3()
+        elif random_number == 4:
+            question4()
+        elif random_number == 5:
+            question5()
+        else:
+            question6()
 
 def beauty():
     print(f"There are 3 Questions in this Entertainment Session")
@@ -366,27 +583,4 @@ elif user_pick1 == 3:
 elif user_pick1 == 4:
       beauty()
 elif user_pick1 == 5:
-      lifestyle()
-
-
-if user_pick2 == 1:
-      entertainment()
-elif user_pick2 == 2:
-      polities()
-elif user_pick2 == 3:
-      sport()
-elif user_pick2 == 4:
-      beauty()
-elif user_pick2 == 5:
-      lifestyle()
-
-if user_pick3 == 1:
-      entertainment()
-elif user_pick3 == 2:
-      polities()
-elif user_pick3 == 3:
-      sport()
-elif user_pick3 == 4:
-      beauty()
-elif user_pick3 == 5:
       lifestyle()
