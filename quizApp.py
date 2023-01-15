@@ -2,6 +2,7 @@ from random import randint
 
 print("Please Enter Your Name:")
 # error handling for username
+
 while True:
     user_name = input(">>").title().strip()
     while user_name.isalpha() is not True or len(user_name) <=2 or len(user_name) >= 16:
@@ -23,16 +24,19 @@ while True:
 
 print(f"Please select one section from above to play from using their numbers")
 # Error handling for picking questions
-while True:
-    try:
-        user_pick1 = int(input(">>"))
-        if user_pick1 < 1 or user_pick1 > 4:
-            print("Enter any number between 1 - 4")
-            continue
-        else:
-            break
-    except ValueError:
-        print("Enter any number from the option above")
+def userPickFunction():
+    while True:
+        try:
+            global user_pick
+            user_pick = int(input(">>"))
+            if user_pick < 1 or user_pick > 4:
+                print("Enter any number between 1 - 4")
+                continue
+            else:
+                break
+        except ValueError:
+            print("Enter any number from the option above")
+    return user_pick
 
 Q_numbers = 1
 score = 0
@@ -66,7 +70,6 @@ def four_options():
         except ValueError:
             print("Please a numeric value")
     return quest1
-
 
 def entertainment():
       print(f"There are 3 Questions in this Entertainment Section")
@@ -717,11 +720,93 @@ def beauty():
             question6()
 
 
-if user_pick1 == 1:
-    entertainment()
-elif user_pick1 == 2:
-    polities()
-elif user_pick1 == 2:
-    sport()
+# Questions to ask when user pick
+def question():
+    if user_pick == 1:
+        entertainment()
+        user_pick_list.append(user_pick)
+    elif user_pick == 2:
+        polities()
+    elif user_pick == 3:
+        sport()
+    else:
+        beauty()
+
+
+user_pick_list = []
+user_pick = userPickFunction()
+
+if score == 0:
+    print("Level 1! score 20 or more")
+    while True:
+        if user_pick not in user_pick_list:
+            user_pick_list.append(user_pick)
+            break
+        else:
+            print("Enter Another Option that you haven't played yet")
+            userPickFunction()
+            continue
+    question()
+
+if score >= 20:
+    print("Congratulation! You are now in Level 2")
+    while True:
+        if user_pick not in user_pick_list:
+            user_pick_list.append(user_pick)
+            break
+        else:
+            print("Enter Another Option that you haven't played yet")
+            userPickFunction()
+            continue
+    question()
 else:
-    beauty()
+    print("Game Over! Try Again")
+    print("You need to Score atleast 20 to get to Level 2")
+
+if score >= 50:
+    print("Congratulation! You are now in Level 3")
+    while True:
+        if user_pick not in user_pick_list:
+            user_pick_list.append(user_pick)
+            break
+        else:
+            print("Enter Another Option that you haven't played yet")
+            userPickFunction()
+            continue
+    question()
+else:
+    print("Game Over! Try Again")
+    print("You need to Score atleast 50 to get to Level 3")
+
+if score >= 85:
+    print("Congratulation! You are now in Level 4")
+    while True:
+        if user_pick not in user_pick_list:
+            user_pick_list.append(user_pick)
+            break
+        else:
+            print("Enter Another Option that you haven't played yet")
+            userPickFunction()
+            continue
+    question()
+else:
+    print("Game Over! Try Again")
+    print("You need to Score atleast 85 to get to Level 5")
+
+if score >= 120:
+    print("Congratulation! You are now in Level 5")
+    while True:
+        if user_pick not in user_pick_list:
+            user_pick_list.append(user_pick)
+            break
+        else:
+            print("Enter Another Option that you haven't played yet")
+            userPickFunction()
+            continue
+    question()
+else:
+    print("Game Over! Try Again")
+    print("You need to Score 120 to Win the Golden price")
+
+if score >= 120:
+
