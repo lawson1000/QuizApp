@@ -17,8 +17,7 @@ while True:
               f"\n[1] Entertainment"
               f"\n[2] Polities"
               f"\n[3] Sport"
-              f"\n[4] Beauty"
-              f"\n[5] Lifestyle")
+              f"\n[4] Beauty")
         break
     break
 
@@ -27,8 +26,8 @@ print(f"Please select one section from above to play from using their numbers")
 while True:
     try:
         user_pick1 = int(input(">>"))
-        if user_pick1 < 1 or user_pick1 > 5:
-            print("Enter any number between 1 - 5")
+        if user_pick1 < 1 or user_pick1 > 4:
+            print("Enter any number between 1 - 4")
             continue
         else:
             break
@@ -38,6 +37,7 @@ while True:
 Q_numbers = 1
 score = 0
 
+# For Questions with two Options only
 def two_options():
     while True:
         try:
@@ -52,7 +52,7 @@ def two_options():
             print("Please a numeric value")
     return q1
 
-
+# For Questions with Four Options only
 def four_options():
     while True:
         try:
@@ -66,8 +66,6 @@ def four_options():
         except ValueError:
             print("Please a numeric value")
     return quest1
-
-
 
 
 def entertainment():
@@ -370,7 +368,6 @@ def polities():
         else:
             question6()
 
-
 def sport():
     print(f"There are 3 Questions in this Sport Section")
     def question1():
@@ -428,7 +425,7 @@ def sport():
         print(f"Question {Q_numbers}\n"
               f"=============================\n"
               f"What’s the national sport of Canada?\n"
-              f"[1] America Soccer \n[2] Football\n[3] Lacrose \n[4] Base Ball\n"
+              f"[1] America Soccer \n[2] Football\n[3] Lacrosse \n[4] Base Ball\n"
               f"=============================")
         spo_q3 =four_options()
         global score
@@ -442,7 +439,7 @@ def sport():
             score -= 5
             print(f"========================\n"
                   f"WRONG\n"
-                  f"The Answer is [3] Lacrose\n"
+                  f"The Answer is [3] Lacrosse\n"
                   f"Your Current Score is {score}\n"
                   f"========================\n")
         Q_numbers += 1
@@ -451,13 +448,13 @@ def sport():
         global Q_numbers
         print(f"Question {Q_numbers}\n"
               f"=============================\n"
-              f"Who formed the first political party in Nigeria? \n"
-              f"[1] Abacha \n[2] Obasanjo\n[3] Tinubu \n[4] Herbert Macaulay\n"
+              f"What’s the diameter of a basketball hoop in inches?\n"
+              f"[1] 23 inches \n[2] 14 inches \n[3] 10 inches \n[4] 18 inches\n"
               f"=============================")
-        pol_q4=four_options()
+        spo_q4=four_options()
 
         global score
-        if pol_q4 == 4:
+        if spo_q4 == 4:
             score += 10
             print(f"========================\n"
                   f"CORRECT\n"
@@ -467,7 +464,7 @@ def sport():
             score -= 5
             print(f"========================\n"
                   f"WRONG\n"
-                  f"The Answer is [4] Herbert Macaculay\n"
+                  f"The Answer is [4] 18 inches\n"
                   f"Your Current Score is {score}\n"
                   f"========================\n")
         Q_numbers += 1
@@ -477,13 +474,13 @@ def sport():
         global Q_numbers
         print(f"Question {Q_numbers}\n"
               f"=============================\n"
-              f"What was the name of the first political party in Nigeria? \n"
-              f"[1] NNPC \n[2] APC \n[3] PDP \n[4] NNDP \n"
+              f"Venus Williams has won more tennis grand slam titles than Serena Williams \n"
+              f"[1] True \n[2] False \n"
               f"=============================")
-        pol_q5 = four_options()
+        spo_q5 = two_options()
 
         global score
-        if pol_q5 == 4:
+        if spo_q5 == 2:
             score += 10
             print(f"========================\n"
                   f"CORRECT\n"
@@ -493,7 +490,7 @@ def sport():
             score -= 5
             print(f"========================\n"
                   f"WRONG\n"
-                  f"The Answer is [4] NNDP\n"
+                  f"The Answer is [2] False\n"
                   f"Your Current Score is {score}\n"
                   f"========================\n")
         Q_numbers += 1
@@ -502,13 +499,13 @@ def sport():
         global Q_numbers
         print(f"Question {Q_numbers}\n"
               f"=============================\n"
-              f"What do the two horses represent on the Nigerian coat of arm? \n"
-              f"[1] Peace \n[2] Strength\n[3] Dignity \n[4] So help me God\n"
+              f"How many holes are played in an average round of golf? \n"
+              f"[1] 18 \n[2] 19 \n[3] 20 \n[4] 21\n"
               f"=============================")
-        pol_q6 = four_options()
+        spo_q6 = four_options()
 
         global score
-        if pol_q6 == 3:
+        if spo_q6 == 1:
             score += 10
             print(f"========================\n"
                   f"CORRECT\n"
@@ -518,7 +515,7 @@ def sport():
             score -= 5
             print(f"========================\n"
                   f"WRONG\n"
-                  f"The Answer is [3] Dignity\n"
+                  f"The Answer is [1] 18\n"
                   f"Your Current Score is {score}\n"
                   f"========================\n")
         Q_numbers += 1
@@ -546,41 +543,185 @@ def sport():
             question6()
 
 def beauty():
-    print(f"There are 3 Questions in this Entertainment Session")
-    print(f"Question\n"
-          f"=============================\n"
-          f"Davido is a Musician?\n"
-          f"[A] True \n[B] False"
-          f"=============================\n")
-    q1 = input(">>").upper()
-    if q1 == "A":
-        print("Correct")
-        # score += 10
-    else:
-        print("Wrong")
+    print(f"There are 3 Questions in this Beauty Section")
+    def question1():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"What is the process of removing dead skin cells from the body called?\n"
+              f"[1] remover \n[2] Exfoliation\n[3] Eclipse \n[4] sorcery \n"
+              f"=============================")
+        bea_q1 = four_options()
 
-def lifestyle():
-    print(f"There are 3 Questions in this Entertainment Session")
-    print(f"Question\n"
-          f"=============================\n"
-          f"Davido is a Musician?\n"
-          f"[A] True \n[B] False"
-          f"=============================\n")
-    q1 = input(">>").upper()
-    if q1 == "A":
-        print("Correct")
-        # score += 10
-    else:
-        print("Wrong")
+        global score
+        if bea_q1 == 3:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            score -= 5
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [2] Exfoliation\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+    def question2():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"What is the clear gel extracted from aloe vera leaves used for medically?\n"
+              f"[1] For clearer Eyes vision \n[2] Grow longer Hair \n[3] Cure level 1 cancer \n[4] Treating Burns\n"
+              f"=============================")
+        bea_q2=four_options()
+
+        global score
+        if bea_q2 == 4:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            score -= 5
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [4] Treating Burns\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+    def question3():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"What is a hairstyle with two ponytails, one on each side of the head, called?\n"
+              f"[1] Two ponies\n[2] Pigtails \n"
+              f"=============================")
+        bea_q3 =two_options()
+        global score
+        if bea_q3 == 2:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            score -= 5
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [2] Pigtails\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+    def question4():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"What body part is reshaped in plastic surgery known as 'rhinoplasty'?\n"
+              f"[1] Nose \n[2] Ear \n[3] Stomach \n[4] Mouth\n"
+              f"=============================")
+        bea_q4=four_options()
+
+        global score
+        if bea_q4 == 1:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            score -= 5
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [1] Nose\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+
+    def question5():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"What beauty gadget is used to pluck stray eyebrow hairs?"
+              f"[1] pluck \n[2] Eyelid \n[3] Tweezers \n[2] dryer \n"
+              f"=============================")
+        bea_q5 = four_options()
+
+        global score
+        if bea_q5 == 3:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            score -= 5
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [3] Tweezers \n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+    def question6():
+        global Q_numbers
+        print(f"Question {Q_numbers}\n"
+              f"=============================\n"
+              f"Where did yoga originate? \n"
+              f"[1] Spain \n[2] China \n[3] India \n[4] France\n"
+              f"=============================")
+        bea_q6 = four_options()
+
+        global score
+        if bea_q6 == 3:
+            score += 10
+            print(f"========================\n"
+                  f"CORRECT\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        else:
+            score -= 5
+            print(f"========================\n"
+                  f"WRONG\n"
+                  f"The Answer is [3] India\n"
+                  f"Your Current Score is {score}\n"
+                  f"========================\n")
+        Q_numbers += 1
+
+    rand_list = []
+    for i in range(3):
+        while True:
+            random_number = randint(1, 6)
+            if random_number not in rand_list:
+                rand_list.append(random_number)
+                break
+            else:
+                continue
+        if random_number == 1:
+            question1()
+        elif random_number == 2:
+            question2()
+        elif random_number == 3:
+            question3()
+        elif random_number == 4:
+            question4()
+        elif random_number == 5:
+            question5()
+        else:
+            question6()
 
 
 if user_pick1 == 1:
-      entertainment()
+    entertainment()
 elif user_pick1 == 2:
-      polities()
-elif user_pick1 == 3:
-      sport()
-elif user_pick1 == 4:
-      beauty()
-elif user_pick1 == 5:
-      lifestyle()
+    polities()
+elif user_pick1 == 2:
+    sport()
+else:
+    beauty()
